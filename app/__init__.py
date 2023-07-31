@@ -8,9 +8,8 @@ def create_app(test_config=None):
     SECRET_KEY='super_secret_key'
   )
 
-  # create app route 
   @app.route('/hello')
   def hello():
-    return 'Hello, World!'
+    return 'Hello, world!'
 
   return app
