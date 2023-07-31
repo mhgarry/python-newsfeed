@@ -3,7 +3,7 @@ from app.db import Base
 from sqlalchemy import Column, Integer, String, DateTime, ForeignKey
 from sqlalchemy.orm import relationship
 
-class Post(Base): # create a Post class that makes a table called posts that makes a post api request to our database 
+class Post(Base): # create a Post class that makes a table called posts
     __tablename__ = 'posts'
     id = Column(Integer, primary_key=True)
     title = Column(String(100), nullable=False)
