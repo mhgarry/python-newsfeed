@@ -1,4 +1,4 @@
-from app.routes import home # import the module home from /routes/home.py and alias it as home to be used in our routes package  to export to our app package
+from app.routes import home, dashboard # import the module home from /routes/home.py and alias it as home to be used in our routes package  to export to our app package and dashboard from /routes/dashboard.py and alias it as dashboard to be used in our routes package  to export to our app package
 from flask import Flask
 
 
@@ -18,5 +18,6 @@ def create_app(test_config=None):
   
   # register our routes package to our app package
   app.register_blueprint(home)
+  app.register_blueprint(dashboard)
 
   return app
