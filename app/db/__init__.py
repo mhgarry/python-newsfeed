@@ -1,7 +1,8 @@
 from os import getenv # importing getenv from the os module the os module provides a portable way of using operating system dependent functionality.
 from sqlalchemy.ext.declarative import declarative_base # importing declarative_base from sqlalchemy.ext.declarative
 from sqlalchemy.orm import sessionmaker # importing sessionmaker from sqlalchemy.orm
-from sqlalchemy.orm import create_engine # importing create_engine from sqlalchemy.orm
+from sqlalchemy import create_engine
+ # importing create_engine from sqlalchemy.orm
 from dotenv import load_dotenv # importing load_dotenv from dotenv
 
 load_dotenv() # load_dotenv() loads the values from our .env file into our script's environment
