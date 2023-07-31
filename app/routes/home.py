@@ -8,13 +8,13 @@ bp = Blueprint('home', __name__, url_prefix='/')
 # create a route to the home page templated in index.html with jinja syntax
 @bp.route('/')
 def index():
-    return render_template('index.html')
+    return render_template('homepage.html')
 # create a route to the login page templated in login.html with jinja syntax with javascript to handle the login form submission
 @bp.route('/login')
 def login():
     return render_template('login.html')
 
-@bp.route('/post/<id>') # <id> is a dynamic route that represents a post id that we define in the post function using id as an argument
-def post(id):
+@bp.route('/post/<id>') # <id> is a dynamic route that represents a post id that we define in the single function using id as an argument
+def single(id):
     return render_template('single-post.html') 
 

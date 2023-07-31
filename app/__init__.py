@@ -1,4 +1,6 @@
+from app.routes import home # import the module home from /routes/home.py and alias it as home to be used in our routes package  to export to our app package
 from flask import Flask
+
 
 def create_app(test_config=None):
   # set up app config and create instance of Flask
@@ -13,5 +15,8 @@ def create_app(test_config=None):
   @app.route('/hello')
   def hello():
     return 'Hello, world!'
+  
+  # register our routes package to our app package
+  app.register_blueprint(home)
 
   return app
