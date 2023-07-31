@@ -1,6 +1,6 @@
 from datetime import datetime
 from app.db import Base
-from sqlalchemy import Column, Integer, String, ForeginKey, DateTime   
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime   
 from sqlalchemy.orm import relationship # importing relationship to create a one to many relationship between our models
 
 class Comment(Base):
