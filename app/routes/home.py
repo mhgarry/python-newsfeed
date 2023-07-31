@@ -1,6 +1,8 @@
 from flask import Blueprint, render_template # import Blueprint and render_template from flask
 # Blueprint allows us to consolidate our routes into a single object that we can register in our application, it is equivalent to the express router
 # render_template allows us to render html tempaltes with jinja syntax and responds with a template isntead of a string
+# with this code we are creating a module to be used in our routes package that will be imported in our __init__.py file
+
 
 bp = Blueprint('home', __name__, url_prefix='/')
 # create a route to the home page templated in index.html with jinja syntax
