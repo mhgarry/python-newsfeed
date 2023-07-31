@@ -1,6 +1,9 @@
 from app.db import Base # importing Base from app.db to use a as a base class for our model 
 from sqlalchemy import Column, Integer, String # importing rows to populate our columns that populate our table with data 
 from sqlalchemy.orm import validates # add validation to our model
+import bcrypt # importing bcrypt to hash our passwords
+
+salt = bcrypt.gensalt() # generating a salt to hash our passwords with
 
 class User(Base): # creating a class called User that inherits from Base
     __tablename__ = 'users' # creating a table called users
@@ -19,6 +22,5 @@ class User(Base): # creating a class called User that inherits from Base
     def validate_password(self, key, password):
         assert len(password) > 4
 
-        return password
-    
+        return bcrypt.hashpw(password.encode('utf-8'), salt) # hashing our password with bcrypt and returning it to be stored in our database
     
