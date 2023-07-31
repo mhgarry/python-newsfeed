@@ -13,3 +13,4 @@ class Post(Base): # create a Post class that makes a table called posts
     updated_at = Column(DateTime, default=datetime.now, onupdate=datetime.now)
 
     user = relationship('User') # create a relationship between our Post and User models
+    comments = relationship('Comment', cascade='all,delete') # create a relationship between our Post and Comment models and cascade all deletes to our comments table
